@@ -1,0 +1,65 @@
+<!-- <div class="row">
+    <div class="col-4">
+        <h2>Edit profile:</h2>
+    </div>
+    <div class="col-8">
+        <div class="alert alert-info" *ngIf="editForm.dirty">
+            <tr>
+                <td>
+                    <strong>You have made changes in your profile. Any unsaved changes will be lost!</strong>
+                </td>
+                <td>
+                    <button form="editForm" class="btn btn-success btn-block ml-5 mr-5">Save changes</button> 
+                </td>
+            </tr>            
+        </div>
+    </div>
+</div> -->
+<div class="row">
+    <div class="col-3">
+        <form #editForm="ngForm" id="editForm" (ngSubmit)="updateProfile()">
+            <div class="card">
+                <img src="{{profile.photoUrl}}" alt="{{profile.knownAs}}" class="card-img-top img-thumbnail">
+                <div class="card-body">
+                    <h4>Photo URL:</h4>
+                    <textarea class="form-control" [(ngModel)]="profile.photoUrl" name="photoUrl" rows="1" style="min-width: 100%; resize: none;">{{profile.photoUrl}}</textarea>
+                    <h4 class="mt-2">Name:</h4>
+                    <textarea class="form-control" [(ngModel)]="profile.knownAs" name="knownAs" rows="1" style="min-width: 100%; resize: none;">{{profile.knownAs}}</textarea>
+                    <h4 class="mt-2">Bio:</h4>
+                    <textarea class="form-control" [(ngModel)]="profile.userBio" name="userBio" rows="6" style="min-width: 100%; resize: none;">{{profile.userBio}}</textarea>
+                    <!-- <button class="btn btn-success btn-block mt-2">Save changes</button>     -->
+                </div>   
+            </div>
+        </form>
+    </div> 
+    <div id="linksDiv" class="col-9">
+        <div class="row">
+            <div class="col-7">
+                <h3>Links:</h3>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-primary btn-block ml-5 mr-5" (click)="openNewLink()">New link</button>
+            </div>
+            <div class="col-2">
+                <button form="editForm" class="btn btn-success btn-block ml-5 mr-5">Save changes</button> 
+            </div>
+        </div>
+        <div *ngIf="profile.links?.length > 0">
+            <div class="card form-group mt-3" *ngFor="let link of profile.links">
+                <div class="row">
+                    <div class="col-2">
+                        <h4>Link name:</h4>
+                        <h4>Link URL:</h4>
+                    </div>
+                    <div class="col-8">
+                        <textarea class="form-control" [(ngModel)]="link.linkName" name="link.linkName" rows="1" style="min-width: 94%; resize: none; position: center;">{{link.linkName}}</textarea>
+                        <textarea class="form-control" [(ngModel)]="link.linkUrl" name="link.linkUrl" rows="1" style="resize: none; position: center;">{{link.linkUrl}}</textarea>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-danger btn-block" (click)="deleteLink(link.id)">Delete</button>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+</div>

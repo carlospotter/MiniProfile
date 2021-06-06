@@ -1,0 +1,29 @@
+.img-thumbnail {
+    margin: 25px;
+    width: 85%;
+    height: 85%;
+}
+
+.card-body {
+    padding: 0 25px;
+}
+
+h2 {
+    text-align: center;
+    color: darkgrey;
+}
+
+.user-bio {
+    color: darkgrey;
+}
+
+
+.link-card {
+    text-align: center;
+    padding: 0 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    font-size: large;
+    color: darkgrey;
+}

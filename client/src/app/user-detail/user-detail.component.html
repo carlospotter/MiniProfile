@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-4">
+        <div class="card">
+            <img src="{{userDetails.photoUrl}}" alt="{{userDetails.knownAs}}" class="card-img-top img-thumbnail">
+            <div class="card-body">
+                <div class="known-as">
+                    <h2>{{userDetails.knownAs}}</h2>
+                </div>
+                <div class="user-bio">
+                    <h5>{{userDetails.userBio}}</h5>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-8" *ngIf="userDetails.links?.length > 0">
+        <div class="card" *ngFor="let link of userDetails.links">
+            <a class="link-card mb-3" href="{{link.linkUrl}}" target="_blank">{{link.linkName}}</a>
+        </div>
+    </div>
+</div>
