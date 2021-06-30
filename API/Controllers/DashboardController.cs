@@ -115,5 +115,26 @@ namespace API.Controllers
             return BadRequest("Cannot delete the link!");
 
         }
+
+        
+        // Delete account:
+        [HttpDelete("delete-account")]
+        public async Task<ActionResult> DeleteAccount()
+        {
+            if (int.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out int userId))
+            {
+                var user = await _context.Users
+                            .SingleOrDefaultAsync(u => u.Id == userId);
+
+                _usersRepository.Delete(user);
+                
+                if (await _usersRepository.SaveAllAsync()) return Ok();
+
+                return BadRequest("Cannot delete the user!");
+            }
+
+            return Unauthorized();
+        }
+
     }
 }
