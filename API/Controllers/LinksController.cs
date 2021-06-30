@@ -28,24 +28,23 @@ namespace API.Controllers
             return link;
         }
 
+        // [HttpPost("{userId}")]
+        // public async Task<ActionResult<Links>> AddLinks(Links links, int userId)
+        // {
+        //     var link = new Links
+        //     {
+        //         Id = links.Id,
+        //         LinkName = links.LinkName,
+        //         LinkUrl = links.LinkUrl,
+        //         AppUserId = userId
+        //     };
 
-        [HttpPost("{userId}")]
-        public async Task<ActionResult<Links>> AddLinks(Links links, int userId)
-        {
-            var link = new Links
-            {
-                Id = links.Id,
-                LinkName = links.LinkName,
-                LinkUrl = links.LinkUrl,
-                AppUserId = userId
-            };
+        //     // _context.Links.Add(link);
+        //     _linksRepository.AddLink(link);
+        //     // await _context.SaveChangesAsync();
+        //     if (await _usersRepository.SaveAllAsync()) return Ok(link);
 
-            // _context.Links.Add(link);
-            _linksRepository.AddLink(link);
-            // await _context.SaveChangesAsync();
-            if (await _usersRepository.SaveAllAsync()) return Ok(link);
-
-            return BadRequest("Cannot add link!");
-        }
+        //     return BadRequest("Cannot add link!");
+        // }
     }
 }
