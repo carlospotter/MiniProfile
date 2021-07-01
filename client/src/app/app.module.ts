@@ -18,6 +18,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AddLinkComponent } from './add-link/add-link.component';
 import { AboutComponent } from './about/about.component';
+import { DeleteUserComponent } from './delete-user/delete-user.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AboutComponent } from './about/about.component';
     ProfileUpdateComponent,
     MessagesComponent,
     AddLinkComponent,
-    AboutComponent
+    AboutComponent,
+    DeleteUserComponent
   ],
   imports: [
     BrowserModule,

@@ -32,4 +32,8 @@ export class UserService {
   deleteLink(linkId: number) {
     return this.http.delete(this.baseUrl + 'dashboard/link/' + String(linkId));
   }
+
+  deleteUser() {
+    return this.http.delete(this.baseUrl + 'dashboard/delete-account');
+  }
 }

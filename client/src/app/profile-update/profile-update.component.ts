@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
 import { AddLinkComponent } from '../add-link/add-link.component';
+import { DeleteUserComponent } from '../delete-user/delete-user.component';
 import { Links } from '../_models/links';
 import { Profile } from '../_models/profile';
 import { User } from '../_models/user';
@@ -66,5 +67,9 @@ export class ProfileUpdateComponent implements OnInit {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.router.onSameUrlNavigation = 'reload';
     this.router.navigate([currentUrl]);
+  }
+
+  openDeleteUser(){
+    this.bsModalRef = this.modalService.show(DeleteUserComponent);
   }
 }
