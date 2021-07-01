@@ -8,5 +8,7 @@ namespace API.Interfaces
         void Update(AppUser user);
         Task<bool> SaveAllAsync();
         Task<AppUser> GetUserByUsernameAsync(string username);
+        Task<AppUser> GetUserByUserIdAsync(int userId);
+        void Delete(AppUser user);
     }
 }
