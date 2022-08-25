@@ -4,4 +4,3 @@ MiniProfile is a web application built to create a single page where anyone can 
 
 The application was built with .NET and Angular for learning purposes. As a platform for continuous learning, new features and fixes will be available soon.
 
-Check my MiniProfile: https://miniprofile.herokuapp.com/u/carlos
